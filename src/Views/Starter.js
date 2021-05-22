@@ -1,16 +1,19 @@
 import { Space, Button, Typography, InputNumber, Checkbox } from 'antd';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { updateSeatsCount, updateSeatsTogether } from '../actions';
 
 const Starter = () => {
 
     const { Text } = Typography;
+    const dispatch = useDispatch();
 
     const onInputChange = (value) => {
-        console.log(value + ' tickets selected.');
+        dispatch(updateSeatsCount(value));
     }
 
-    const onCheckboxChange = (e) => {
-        console.log(e.target.checked);
+    const onCheckboxChange = () => {
+        dispatch(updateSeatsTogether());
     }
 
     return (
@@ -26,11 +29,11 @@ const Starter = () => {
                         onChange={onInputChange}/>
                 </Space>
                 <Space style={{margin: '16px 0'}}>
-                    <Checkbox onChange={onCheckboxChange}>
+                    <Checkbox onChange={() => dispatch(updateSeatsTogether())}>
                         Czy miejsca mają być obok siebie?
                     </Checkbox>
                 </Space>
-                <Link to="/seats">
+                <Link to="/selection">
                     <Button block>
                         Wybierz miejsca
                     </Button>

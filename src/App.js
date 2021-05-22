@@ -13,7 +13,7 @@ function App() {
           <Route exact path="/">
             <Starter />
           </Route>
-          <Route path="/seats">
+          <Route path="/selection">
             <SeatsSelector />
           </Route>
           <Route path="/overview">
