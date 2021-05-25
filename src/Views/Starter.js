@@ -8,14 +8,6 @@ const Starter = () => {
     const { Text } = Typography;
     const dispatch = useDispatch();
 
-    const onInputChange = (value) => {
-        dispatch(updateSeatsCount(value));
-    }
-
-    const onCheckboxChange = () => {
-        dispatch(updateSeatsTogether());
-    }
-
     return (
         <div className="space-align-block">
             <Space direction="vertical">
@@ -26,7 +18,7 @@ const Starter = () => {
                         min={1} 
                         max={100} 
                         defaultValue={1} 
-                        onChange={onInputChange}/>
+                        onChange={(value) => dispatch(updateSeatsCount(value))}/>
                 </Space>
                 <Space style={{margin: '16px 0'}}>
                     <Checkbox onChange={() => dispatch(updateSeatsTogether())}>

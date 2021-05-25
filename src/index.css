@@ -18,3 +18,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.seats-box {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  /* grid-template-columns: repeat(15, 3rem);
+  grid-template-rows: repeat(12, 3rem); */
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.seat {
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /* aspect-ratio: 1; */
+}
+
+.seat-reserved {
+  background-color: orange;
+  cursor: not-allowed;
+}
+
+.seat-selected {
+  background-color: #222;
+}
