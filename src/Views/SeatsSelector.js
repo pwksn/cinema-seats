@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import useFetch from '../hooks/useFetch';
 import { Typography } from 'antd';
 import Seat from '../Components/Seat';
+import SeatsLegend from '../Components/SeatsLegend';
 
 const SeatsSelector = () => {
 
@@ -10,10 +11,12 @@ const SeatsSelector = () => {
     const { Text } = Typography;
     const seatsCounter = useSelector(state => state.seatsCounter);
     const seatsTogether = useSelector(state => state.seatsTogether);
-    let selectedSeats = [];
+    const selectedSeats = [];
 
     useEffect(() => {
-        console.log(seats);
+        if (seats) {
+            // findFreeSeats();
+        }
     }, [seats]);
 
     const onSeatSelection = (seat) => {
@@ -28,9 +31,12 @@ const SeatsSelector = () => {
             }
         }
         console.log(selectedSeats);
-        // console.log(seat);
     }
 
+    const onSeatsBooking = () => {
+        // save selected seats in localStorage on button click
+        localStorage.setItem('selectedSeats', JSON.stringify(selectedSeats));
+    }
 
     return (
         <div className="seats-box">
@@ -39,6 +45,7 @@ const SeatsSelector = () => {
             ))}
             {isPending && <Text style={{fontSize: '24px', gridColumn: '1 / -1'}}>Czekaj...</Text>}
             {error && <Text style={{fontSize: '24px', gridColumn: '1 / -1'}}>Nie udało się pobrać danych. :(</Text>}
+            {seats && <SeatsLegend onBooking={onSeatsBooking}/>}
         </div>
     );
 }

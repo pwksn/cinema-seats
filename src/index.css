@@ -40,10 +40,34 @@ code {
 }
 
 .seat-reserved {
-  background-color: orange;
+  background-color: #222;
   cursor: not-allowed;
 }
 
 .seat-selected {
-  background-color: #222;
+  background-color: orange;
+}
+
+.seats-legend-box {
+  grid-row: 11/-1;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.seats-legend-box div {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.seats-legend-box div div:not(:last-child) {
+  width: 4rem;
+  height: 4rem;
+  border: solid 1px #000;
+}
+
+.seats-legend-box div p {
+  margin: 0 1rem;
 }
