@@ -1,6 +1,5 @@
-import Seat from "./Seat";
 import { Link } from 'react-router-dom'
-import { Space, Button, Typography, InputNumber, Checkbox } from 'antd';
+import { Space, Button } from 'antd';
 
 const SeatsLegend = ({ onBooking }) => {
     return (

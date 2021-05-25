@@ -1,21 +1,18 @@
 import { useState } from "react";
 
 const Seat = ({ seat, onSeatSelection }) => {
-    
-    const [seatSelected, setSeatSelected] = useState(false);
+   
+    const [seatViewRefresh, setSeatViewRefresh] = useState(false);
 
     const onSeatClicked = () => {
         onSeatSelection(seat);
-        if (seat.selected) {
-            setSeatSelected(true);
-        } else {
-            setSeatSelected(false);
-        }
+        // refresh view of Seat component
+        setSeatViewRefresh(!seatViewRefresh)
     }
 
     return (
         <div 
-            className={`seat ${seat.reserved ? 'seat-reserved' : ''} ${seatSelected ? 'seat-selected' : ''}`} 
+            className={`seat ${seat.reserved ? 'seat-reserved' : ''} ${seat.selected ? 'seat-selected' : ''}`} 
             style={{gridColumn: `${seat.cords.y + 1}`, gridRow: `${seat.cords.x + 1}`}}
             onClick={() => onSeatClicked()}
             >
