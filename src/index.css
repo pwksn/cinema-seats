@@ -68,6 +68,6 @@ code {
   border: solid 1px #000;
 }
 
-.seats-legend-box div p {
+.seats-legend-box div span {
   margin: 0 1rem;
 }

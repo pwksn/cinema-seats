@@ -16,7 +16,6 @@ const Seat = ({ seat, onSeatSelection }) => {
             style={{gridColumn: `${seat.cords.y + 1}`, gridRow: `${seat.cords.x + 1}`}}
             onClick={() => onSeatClicked()}
             >
-            <p>x: {seat.cords.x}, y: {seat.cords.y}</p>
         </div>
     );
 }

@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom'
-import { Space, Button } from 'antd';
+import { Space, Button, Typography } from 'antd';
 
 const SeatsLegend = ({ onBooking }) => {
+
+    const { Text } = Typography;
+
     return (
         <div className="seats-legend-box space-align-container" style={{justifyContent: 'space-between'}}>
             <div>
                 <div></div>
-                <p>Miejsca dostępne</p>
+                <Text>Liczba miejsc:</Text>
             </div>
             <div>
                 <div style={{backgroundColor: '#222'}}></div>
-                <p>Miejsca zarezerwowane</p>
+                <Text>Liczba miejsc:</Text>
             </div>
             <div>
                 <div style={{backgroundColor: 'orange'}}></div>
-                <p>Twój wybór</p>
+                <Text>Liczba miejsc:</Text>
             </div>
             <div className="space-align-block">
                 <Space align="center">
