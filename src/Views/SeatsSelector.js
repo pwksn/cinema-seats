@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import useFetch from '../hooks/useFetch';
 import { Typography } from 'antd';

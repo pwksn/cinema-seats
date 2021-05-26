@@ -1,14 +1,9 @@
 import { Space, Typography } from 'antd';
-import { useEffect } from 'react';
 
 const { Title, Text } = Typography;
 
 const Overview = () => {
     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
-
-    useEffect(() => {
-        console.log(selectedSeats);
-    }, [selectedSeats]);
     
     return (
         <div>
